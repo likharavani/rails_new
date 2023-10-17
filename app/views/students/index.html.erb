@@ -1,0 +1,13 @@
+<h1>Welcome students</h1>
+<%# <%= render "" %>
+<div>
+  <ul>
+  <%@students.each do |s|%>
+   <li> <%= s.name%></li>
+    <%# <%=link_to "edit", edit_student_path(s)%> 
+  <%end%>
+  </ul>
+</div>
+
+
+<%=link_to "new student","/students/new"%>
