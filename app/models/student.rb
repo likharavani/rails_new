@@ -1,5 +1,6 @@
 class Student < ApplicationRecord
 # after_commit :download_pdf
+after_create :send_welcome_email
 
 scope :solve, -> (name){ where("name=?",name)}
 scope :solve1, -> (name){where("name=?",name)}
@@ -19,5 +20,10 @@ def generate_pdf(client)
     text "Address: #{client.address}"
 
   end.render
+end
+
+
+def send_welcome_email
+  SendEmailsJob.perform_now(self)
 end
 end
