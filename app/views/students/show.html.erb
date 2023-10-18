@@ -4,5 +4,9 @@
 <h4>Address : <%= @student.address%> </h4>
 <h4>Email : <%= @student.email%>  </h4> 
 <h4>Avatar :<%= image_tag @student.avatar %></h4>
+<h4>Images :</h4>
+<% @student.images.each do |image|%>
+   <%= image_tag image %>
+<%end %>
 <%= download_pdf_path%>
 <%= link_to  "download now " , "students#download_pdf" %>

@@ -3,6 +3,7 @@ class Student < ApplicationRecord
 after_create :send_welcome_email
 
 has_one_attached :avatar
+has_many_attached :images
 
 scope :solve, -> (name){ where("name=?",name)}
 scope :solve1, -> (name){where("name=?",name)}

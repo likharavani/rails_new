@@ -21,7 +21,11 @@
     <%=form.file_field :avatar %><br>
   </div>
   <br>
- 
+  <div>
+    <%=form.label :images %><br>
+    <%=form.file_field :images, multiple: true %><br>
+  </div>
+  <br>
    <div>
    
     <%=form.submit "submit"%><br>
