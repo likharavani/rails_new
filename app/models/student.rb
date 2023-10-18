@@ -2,6 +2,8 @@ class Student < ApplicationRecord
 # after_commit :download_pdf
 after_create :send_welcome_email
 
+has_one_attached :avatar
+
 scope :solve, -> (name){ where("name=?",name)}
 scope :solve1, -> (name){where("name=?",name)}
 
@@ -25,5 +27,7 @@ end
 
 def send_welcome_email
   SendEmailsJob.perform_now(self)
+
+  # SendEmailsJob.set(wait_until: Time.now+6).perform_later(self)
 end
 end

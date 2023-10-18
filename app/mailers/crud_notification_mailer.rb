@@ -7,7 +7,7 @@ class CrudNotificationMailer < ApplicationMailer
     # mail to: "#{@object.name}@example.com", subject:  "a new object is created"
     attachments['download.png'] = File.read('app/assets/images/download.png')
 
-     mail to: "likharavanika128@gmail.com",
+     mail to: "abc@mailinator.com",
          subject: "a new student",
         #  cc: Student.all.pluck(:email) ,
           #bcc: "vaparadkar@bestpeers.in",

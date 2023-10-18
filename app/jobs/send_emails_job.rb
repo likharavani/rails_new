@@ -3,6 +3,8 @@ class SendEmailsJob < ApplicationJob
 
   def perform(user)
     # Do something later
-    UserMailer.welcome_email(user).deliver
+
+    CrudNotificationMailer.create_notification(user).deliver
+
   end
 end
